@@ -1,0 +1,10 @@
+{% extends "application/base.html" %}
+
+{% block content %}
+<div class="center-box">
+    <h2 style="margin-bottom:40px">Ваш результат {{ statistics }}% <h2>
+    <div>
+        <a href="{% url 'index' pk=min_question_id %}">Пройти тестирование заново</a>
+    </div>
+</div>
+{% endblock %}
