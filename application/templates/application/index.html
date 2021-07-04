@@ -1,0 +1,96 @@
+{% extends "application/base.html" %}
+
+{% block content %}
+<div class="wrap">
+    <form class="quest">
+            {% csrf_token %}
+        <input type="hidden" name="question" value="{{ question_id }}">
+        <h2>
+            {{choice.question_text}}
+        </h2>
+        <div>
+            <div class="answer-wrap">
+            {% if choice_flag %}
+                {% for choice in choice.choices %}
+                    <div class="answers">
+                        <label for="{{ choice.text }}">{{ choice.text }}</label>
+                        {% if choice.answer_checked %}
+                            <input type="checkbox"  id="{{ choice.text }}" name="form" value="{{choice.id}}" checked>
+                        {% else %}
+                            <input type="checkbox"  id="{{ choice.text }}" name="form" value="{{choice.id}}">
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% for choice in choice.choices %}
+                    <div class="answers">
+                        <label for="{{ choice.id }}">{{ choice.text }}</label>
+                        {% if choice.answer_checked %}
+                            <input type="radio"  id="{{ choice.id }}" name="form" value="{{choice.id}}" checked>
+                        {% else %}
+                            <input type="radio"  id="{{ choice.id }}" name="form" value="{{choice.id}}">
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %} 
+            </div>
+        </div>
+        <input type="button" value="Сохранить ответ" onclick="setAnswers()" id="save_btn">
+    </form>
+    <div class="navigation">
+        {% if prev %}
+            {% if prev >= min_question_id %}
+                <div>
+                    <a href="{% url 'index' pk=prev %}">Предыдущий вопрос</a>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        {% if next <= max_question_id %}
+            <div>
+                <a href="{% url 'index' pk=next %}" class="no-active" id="next-link">Следующий вопрос</a>
+            </div>
+        {% else %}
+            <div>
+                <a href="{% url 'report' %}" class="no-active" id="next-link">Завершить</a>
+            </div>
+        {% endif%}
+    </div>
+</div>
+
+<script>
+function setAnswers() {
+    let form = document.querySelector('.quest');
+    let data = new FormData(form);
+
+    if (data.get('form') === null) {
+        alert("Ответ не выбран")
+        changeClassElement('next-link', 'no-active')
+        return
+    }
+
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 201) {
+                changeClassElement('next-link', 'active')
+            } else {
+                changeClassElement('next-link', 'no-active')
+                alert(400)
+            }
+        }
+    }
+    xhr.open('POST', "{% url 'save_answer' %}")
+    xhr.send(data)
+
+
+}
+
+function changeClassElement(elementId, state) {
+    let element = document.getElementById(elementId);
+    element.setAttribute('class', state)
+}
+</script>
+
+{% endblock %}
+        
