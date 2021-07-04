@@ -1,0 +1,182 @@
+[
+    {
+      "model": "application.choice",
+      "pk": 1,
+      "fields": {
+        "text": "Способность видеть сквозь стены",
+        "question": 1,
+        "is_correct": false
+      }
+    },
+    {
+        "model": "application.choice",
+        "pk": 2,
+        "fields": {
+          "text": "множество интерфейсов, одна реализация",
+          "question": 1,
+          "is_correct": false
+        }
+    },
+    {
+        "model": "application.choice",
+        "pk": 3,
+        "fields": {
+          "text": "один интерфейс, множество реализаций",
+          "question": 1,
+          "is_correct": true
+        }
+      },
+      {
+          "model": "application.choice",
+          "pk": 4,
+          "fields": {
+            "text": "#@!$@!@##",
+            "question": 1,
+            "is_correct": false
+          }
+      },
+      {
+        "model": "application.choice",
+        "pk": 5,
+        "fields": {
+          "text": "Шаблон проектирования, предназначенный для динамического подключения дополнительного поведения к объекту",
+          "question": 2,
+          "is_correct": true
+        }
+      },
+      {
+          "model": "application.choice",
+          "pk": 6,
+          "fields": {
+            "text": "Интерфейс, предоставляющий доступ к элементам коллекции и навигацию по ним",
+            "question": 2,
+            "is_correct": false
+          }
+      },
+      {
+        "model": "application.choice",
+        "pk": 7,
+        "fields": {
+          "text": "Совокупность элементов, составляющих внешнее оформление архитектурного сооружения",
+          "question": 2,
+          "is_correct": false
+        }
+      },
+      {
+          "model": "application.choice",
+          "pk": 8,
+          "fields": {
+            "text": "#@!$@!@##",
+            "question": 2,
+            "is_correct": false
+          }
+      },
+      {
+        "model": "application.choice",
+        "pk": 9,
+        "fields": {
+          "text": "Кортежи",
+          "question": 3,
+          "is_correct": true
+        }
+      },
+      {
+          "model": "application.choice",
+          "pk": 10,
+          "fields": {
+            "text": "Списки",
+            "question": 3,
+            "is_correct": false
+          }
+      },
+      {
+        "model": "application.choice",
+        "pk": 11,
+        "fields": {
+          "text": "Словари",
+          "question": 3,
+          "is_correct": false
+        }
+      },
+      {
+          "model": "application.choice",
+          "pk": 12,
+          "fields": {
+            "text": "Множества",
+            "question": 3,
+            "is_correct": false
+          }
+      },
+      {
+          "model": "application.choice",
+          "pk": 13,
+          "fields": {
+            "text": "Наследование",
+            "question": 4,
+            "is_correct": true
+          }
+        },
+        {
+            "model": "application.choice",
+            "pk": 14,
+            "fields": {
+              "text": "Инкапсуляция",
+              "question": 4,
+              "is_correct": true
+            }
+        },
+        {
+          "model": "application.choice",
+          "pk": 15,
+          "fields": {
+            "text": "Обследование",
+            "question": 4,
+            "is_correct": false
+          }
+        },
+        {
+            "model": "application.choice",
+            "pk": 16,
+            "fields": {
+              "text": "#@!$@!@##",
+              "question": 4,
+              "is_correct": false
+            }
+        },
+        {
+          "model": "application.choice",
+          "pk": 17,
+          "fields": {
+            "text": "Cписки",
+            "question": 5,
+            "is_correct": true
+          }
+        },
+        {
+            "model": "application.choice",
+            "pk": 18,
+            "fields": {
+              "text": "Строки",
+              "question": 5,
+              "is_correct": false
+            }
+        },
+        {
+          "model": "application.choice",
+          "pk": 19,
+          "fields": {
+            "text": "Кортежи",
+            "question": 5,
+            "is_correct": false
+          }
+        },
+        {
+            "model": "application.choice",
+            "pk": 20,
+            "fields": {
+              "text": "Словари",
+              "question": 5,
+              "is_correct": true
+            }
+        }
+  ]
